@@ -14,9 +14,9 @@ source:
   sha256: a89effead5f5df57a9a39c501f1549713e31afcb6039032283305b6122ffac98
 
 build:
+  noarch: generic
   merge_build_host: True  # [win]
-  number: 0
-  skip: true  # [win32]
+  number: 1000
   rpaths:
     - lib/R/lib/
     - lib/
@@ -56,8 +56,7 @@ about:
   summary: 'Tidy tools for quantifying how well model fits to a data set such as confusion matrices,
     class probability curve summaries, and regression metrics (e.g., RMSE). '
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'  # [unix]
-  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-2'  # [win]
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
