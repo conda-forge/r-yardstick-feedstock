@@ -11,7 +11,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/yardstick_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/yardstick/yardstick_{{ version }}.tar.gz
-  sha256: a89effead5f5df57a9a39c501f1549713e31afcb6039032283305b6122ffac98
+  sha256: 0374f683f388df7fd13146e64691189aefe35aaf2baff5565f6a8f197dccf836
 
 build:
   noarch: generic
