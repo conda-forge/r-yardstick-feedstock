@@ -7,7 +7,6 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: yardstick_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/yardstick_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/yardstick/yardstick_{{ version }}.tar.gz
@@ -29,24 +28,24 @@ requirements:
     - {{posix}}make
     - {{posix}}sed               # [win]
     - {{posix}}coreutils         # [win]
-    - {{posix}}zip               # [win]  
+    - {{posix}}zip               # [win]
   host:
     - r-base
+    - r-rcpp
     - r-dplyr
+    - r-generics
     - r-proc
     - r-rlang
     - r-tidyselect
-    - r-rcpp
-    - r-generics
   run:
     - r-base
-    - {{native}}gcc-libs         # [win]    
+    - {{native}}gcc-libs         # [win]
+    - r-rcpp
     - r-dplyr
+    - r-generics
     - r-proc
     - r-rlang
     - r-tidyselect
-    - r-rcpp
-    - r-generics
 
 test:
   commands:
@@ -54,7 +53,7 @@ test:
     - "\"%R%\" -e \"library('yardstick')\""  # [win]
 
 about:
-  home: https://github.com/topepo/yardstick
+  home: https://github.com/tidymodels/yardstick
   license: GPL-2
   summary: 'Tidy tools for quantifying how well model fits to a data set such as confusion matrices,
     class probability curve summaries, and regression metrics (e.g., RMSE). '
@@ -69,3 +68,27 @@ extra:
     - jdblischak
     - cbrueffer
     - dbast
+
+# Package: yardstick
+# Type: Package
+# Title: Tidy Characterizations of Model Performance
+# Version: 0.0.2
+# Authors@R: c( person("Max", "Kuhn", , "max@rstudio.com", c("aut", "cre")), person("Davis", "Vaughan", , "davis@rstudio.com", c("aut")), person("RStudio", role = "cph"))
+# Maintainer: Max Kuhn <max@rstudio.com>
+# Description: Tidy tools for quantifying how well model fits to a data set such as confusion matrices, class probability curve summaries, and regression metrics (e.g., RMSE).
+# URL: https://github.com/tidymodels/yardstick
+# BugReports: https://github.com/tidymodels/yardstick/issues
+# License: GPL-2
+# Encoding: UTF-8
+# LazyData: true
+# RoxygenNote: 6.1.0.9000
+# Depends: R (>= 2.10)
+# Suggests: testthat, covr, purrr, tidyr, ggplot2, knitr, kableExtra, rmarkdown
+# Imports: dplyr, utils, pROC, rlang, tidyselect, Rcpp, generics
+# LinkingTo: Rcpp
+# VignetteBuilder: knitr
+# NeedsCompilation: yes
+# Packaged: 2018-11-05 20:32:41 UTC; davis
+# Author: Max Kuhn [aut, cre], Davis Vaughan [aut], RStudio [cph]
+# Repository: CRAN
+# Date/Publication: 2018-11-05 21:00:03 UTC
