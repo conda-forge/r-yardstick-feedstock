@@ -1,7 +1,9 @@
 About r-yardstick
 =================
 
-Home: https://github.com/topepo/yardstick
+[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
+
+Home: https://github.com/tidymodels/yardstick
 
 Package license: GPL-2
 
@@ -14,8 +16,9 @@ Summary: Tidy tools for quantifying how well model fits to a data set such as co
 Current build status
 ====================
 
-All platforms:
-[![noarch](https://img.shields.io/circleci/project/github/conda-forge/r-yardstick-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/r-yardstick-feedstock)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-yardstick-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-yardstick-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/r-yardstick-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-yardstick-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-yardstick-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-yardstick-feedstock/branch/master)
 
 Current release info
 ====================
@@ -103,3 +106,14 @@ In order to produce a uniquely identifiable distribution:
  * If the version of a package **is** being increased, please remember to return
    the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
    back to 0.
+
+Feedstock Maintainers
+=====================
+
+* [@bgruening](https://github.com/bgruening/)
+* [@cbrueffer](https://github.com/cbrueffer/)
+* [@daler](https://github.com/daler/)
+* [@dbast](https://github.com/dbast/)
+* [@jdblischak](https://github.com/jdblischak/)
+* [@johanneskoester](https://github.com/johanneskoester/)
+
