@@ -1,4 +1,4 @@
-{% set version = '0.0.3' %}
+{% set version = '0.0.4' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/yardstick_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/yardstick/yardstick_{{ version }}.tar.gz
-  sha256: 5580be1df9f0788cf51b20ee1767a321435b246b42e6b131c9266d5b4625d2c1
+  sha256: bb0e78ae41e93c91a8fc0dfa15b240d8b0f29abf2f7475eeacc710b32a47f80e
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -35,8 +35,8 @@ requirements:
     - r-rcpp
     - r-dplyr
     - r-generics
-    - r-proc
-    - r-rlang
+    - r-proc >=1.15.0
+    - r-rlang >=0.4.0
     - r-tidyselect
   run:
     - r-base
@@ -44,8 +44,8 @@ requirements:
     - r-rcpp
     - r-dplyr
     - r-generics
-    - r-proc
-    - r-rlang
+    - r-proc >=1.15.0
+    - r-rlang >=0.4.0
     - r-tidyselect
 
 test:
@@ -56,10 +56,11 @@ test:
 about:
   home: https://github.com/tidymodels/yardstick
   license: GPL-2
-  summary: 'Tidy tools for quantifying how well model fits to a data set such as confusion matrices,
-    class probability curve summaries, and regression metrics (e.g., RMSE). '
+  summary: Tidy tools for quantifying how well model fits to a data set such as confusion matrices,
+    class probability curve summaries, and regression metrics (e.g., RMSE).
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
@@ -68,9 +69,8 @@ extra:
 # Package: yardstick
 # Type: Package
 # Title: Tidy Characterizations of Model Performance
-# Version: 0.0.3
-# Authors@R: c( person("Max", "Kuhn", , "max@rstudio.com", c("aut", "cre")), person("Davis", "Vaughan", , "davis@rstudio.com", c("aut")), person("RStudio", role = "cph"))
-# Maintainer: Max Kuhn <max@rstudio.com>
+# Version: 0.0.4
+# Authors@R: c( person("Max", "Kuhn", , "max@rstudio.com", c("aut")), person("Davis", "Vaughan", , "davis@rstudio.com", c("aut", "cre")), person("RStudio", role = "cph"))
 # Description: Tidy tools for quantifying how well model fits to a data set such as confusion matrices, class probability curve summaries, and regression metrics (e.g., RMSE).
 # URL: https://github.com/tidymodels/yardstick
 # BugReports: https://github.com/tidymodels/yardstick/issues
@@ -80,11 +80,12 @@ extra:
 # RoxygenNote: 6.1.1
 # Depends: R (>= 2.10)
 # Suggests: testthat, covr, purrr, tidyr, ggplot2, knitr, kableExtra, rmarkdown
-# Imports: dplyr, utils, pROC, rlang, tidyselect, Rcpp, generics
+# Imports: dplyr, utils, pROC (>= 1.15.0), rlang (>= 0.4.0), tidyselect, Rcpp, generics
 # LinkingTo: Rcpp
 # VignetteBuilder: knitr
 # NeedsCompilation: yes
-# Packaged: 2019-03-08 18:02:13 UTC; davis
-# Author: Max Kuhn [aut, cre], Davis Vaughan [aut], RStudio [cph]
+# Packaged: 2019-08-26 18:59:32 UTC; davis
+# Author: Max Kuhn [aut], Davis Vaughan [aut, cre], RStudio [cph]
+# Maintainer: Davis Vaughan <davis@rstudio.com>
 # Repository: CRAN
-# Date/Publication: 2019-03-08 19:00:03 UTC
+# Date/Publication: 2019-08-26 22:40:02 UTC
