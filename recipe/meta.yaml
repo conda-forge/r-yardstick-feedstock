@@ -1,4 +1,4 @@
-{% set version = '0.0.4' %}
+{% set version = "0.0.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/yardstick_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/yardstick/yardstick_{{ version }}.tar.gz
-  sha256: bb0e78ae41e93c91a8fc0dfa15b240d8b0f29abf2f7475eeacc710b32a47f80e
+  sha256: ebb841ac2bcdd383a6340a2fc8a8fd039b93422ed277ca8858e652d465c0ae3e
 
 build:
   merge_build_host: True  # [win]
