@@ -1,4 +1,4 @@
-{% set version = "0.0.5" %}
+{% set version = "0.0.6" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/yardstick_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/yardstick/yardstick_{{ version }}.tar.gz
-  sha256: ebb841ac2bcdd383a6340a2fc8a8fd039b93422ed277ca8858e652d465c0ae3e
+  sha256: 0aa7be3b2ec35e15bf3329057f31f89f20bf50b35c1f32672d945b06d85e7be2
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -56,11 +56,11 @@ test:
 about:
   home: https://github.com/tidymodels/yardstick
   license: GPL-2
-  summary: Tidy tools for quantifying how well model fits to a data set such as confusion matrices,
-    class probability curve summaries, and regression metrics (e.g., RMSE).
+  summary: Tidy tools for quantifying how well model fits to a data set such as confusion matrices, class probability curve summaries, and regression metrics (e.g.,
+    RMSE).
   license_family: GPL2
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
