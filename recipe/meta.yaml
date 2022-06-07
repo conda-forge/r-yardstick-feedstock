@@ -23,30 +23,29 @@ requirements:
   build:
     - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('cxx') }}            # [not win]
-    - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-    - r-rcpp
-    - r-dplyr
-    - r-generics
-    - r-proc >=1.15.0
-    - r-rlang >=0.4.0
-    - r-tidyselect
+    - r-dplyr >=1.0.9
+    - r-generics >=0.1.2
+    - r-hardhat >=1.0.0
+    - r-rlang >=1.0.2
+    - r-tidyselect >=1.1.2
+    - r-vctrs >=0.4.1
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
-    - r-rcpp
-    - r-dplyr
-    - r-generics
-    - r-proc >=1.15.0
-    - r-rlang >=0.4.0
-    - r-tidyselect
+    - r-dplyr >=1.0.9
+    - r-generics >=0.1.2
+    - r-hardhat >=1.0.0
+    - r-rlang >=1.0.2
+    - r-tidyselect >=1.1.2
+    - r-vctrs >=0.4.1
 
 test:
   commands:
@@ -55,11 +54,11 @@ test:
 
 about:
   home: https://github.com/tidymodels/yardstick
-  license: GPL-2.0-only
+  license: MIT
   summary: Tidy tools for quantifying how well model fits to a data set such as confusion matrices, class probability curve summaries, and regression metrics (e.g., RMSE).
-  license_family: GPL2
+  license_family: MIT
   license_file:
-    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
 
 extra:
   recipe-maintainers:
