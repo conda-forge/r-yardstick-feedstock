@@ -3,7 +3,7 @@ About r-yardstick
 
 Home: https://github.com/tidymodels/yardstick
 
-Package license: GPL-2.0-only
+Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-yardstick-feedstock/blob/main/LICENSE.txt)
 
