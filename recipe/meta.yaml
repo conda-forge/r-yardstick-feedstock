@@ -21,6 +21,13 @@ build:
 
 requirements:
   build:
+    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
+    - r-rlang                    # [build_platform != target_platform]
+    - r-hardhat                  # [build_platform != target_platform]
+    - r-dplyr                    # [build_platform != target_platform]
+    - r-tidyselect               # [build_platform != target_platform]
+    - r-generics                 # [build_platform != target_platform]
+    - r-vctrs                    # [build_platform != target_platform]
     - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
     - {{ posix }}filesystem        # [win]
