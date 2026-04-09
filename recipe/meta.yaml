@@ -1,4 +1,4 @@
-{% set version = "1.3.2" %}
+{% set version = "1.4.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,13 +9,17 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/yardstick_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/yardstick/yardstick_{{ version }}.tar.gz
-  sha256: 1120f720c381d3300cc7dd6ca95890ee116fd53a3863e11bc4fcedb145c0f940
+  sha256: 579f2b3db310297ddd9413aa076fe4d0d74e4fbd87784a4597ac84718c74888b
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -39,13 +43,12 @@ requirements:
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
-    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-cli
     - r-dplyr >=1.1.0
     - r-generics >=0.1.2
-    - r-hardhat >=1.3.0
+    - r-hardhat >=1.4.3
     - r-lifecycle >=1.0.3
     - r-rlang >=1.1.4
     - r-tibble
@@ -57,7 +60,7 @@ requirements:
     - r-cli
     - r-dplyr >=1.1.0
     - r-generics >=0.1.2
-    - r-hardhat >=1.3.0
+    - r-hardhat >=1.4.3
     - r-lifecycle >=1.0.3
     - r-rlang >=1.1.4
     - r-tibble
@@ -71,7 +74,8 @@ test:
     - "\"%R%\" -e \"library('yardstick')\""  # [win]
 
 about:
-  home: https://github.com/tidymodels/yardstick
+  home: https://yardstick.tidymodels.org
+  dev_url: https://github.com/tidymodels/yardstick
   license: MIT
   summary: Tidy tools for quantifying how well model fits to a data set such as confusion matrices, class probability curve summaries, and regression metrics (e.g., RMSE).
   license_family: MIT
