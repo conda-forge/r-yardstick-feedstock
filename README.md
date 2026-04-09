@@ -7,20 +7,24 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-yardstick-fee
 About r-yardstick
 -----------------
 
-Home: https://github.com/tidymodels/yardstick
+Home: https://yardstick.tidymodels.org
 
 Package license: MIT
 
 Summary: Tidy tools for quantifying how well model fits to a data set such as confusion matrices, class probability curve summaries, and regression metrics (e.g., RMSE).
+
+Development: https://github.com/tidymodels/yardstick
 
 About r-yardstick
 -----------------
 
-Home: https://github.com/tidymodels/yardstick
+Home: https://yardstick.tidymodels.org
 
 Package license: MIT
 
 Summary: Tidy tools for quantifying how well model fits to a data set such as confusion matrices, class probability curve summaries, and regression metrics (e.g., RMSE).
+
+Development: https://github.com/tidymodels/yardstick
 
 Current build status
 ====================
